@@ -1,0 +1,30 @@
+{
+  "name": "goodnuts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "set NODE_ENV=production && set MONGO_USER=plabpluem2540&& set MONGO_PASSWORD=P0E17z3AxK7AhpAD&& set MONGO_DATABASE=goodnut&& node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "node app.js"
+  },
+  "author": "shinepp",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
+    "crypto": "^1.0.1",
+    "express": "^4.18.2",
+    "express-validation": "^4.1.0",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.2",
+    "stripe": "^14.10.0",
+    "validation": "^0.0.1"
+  }
+}
