@@ -200,7 +200,7 @@ exports.getCheckoutSuccess = async (req, res, next) => {
     });
     const order = await checkout.save();
     // res.status(201).json({message:'Create order',order:order})
-    res.redirect("http://localhost:3000");
+    res.redirect("https://goodnuts.netlify.app/");
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
