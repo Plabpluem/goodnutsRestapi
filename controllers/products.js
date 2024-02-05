@@ -200,7 +200,7 @@ exports.getCheckoutSuccess = async (req, res, next) => {
     });
     const order = await checkout.save();
     // res.status(201).json({message:'Create order',order:order})
-    res.redirect("https://goodnuts.netlify.app/");
+    res.redirect("https://goodnuts.vercel.app/profile/orderlist");
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
@@ -215,7 +215,7 @@ exports.getOrder = async (req, res, next) => {
   try {
     const user = await User.findById(req.userId).populate("profile");
     const totalItem = await Order.find({ "user.email": user.email }).countDocuments();
-    const order = await Order.find({ "user.email": user.email }).skip((currentPage - 1)* perPage).limit(perPage)
+    const order = await Order.find({ "user.email": user.email }).sort({createdAt:-1}).skip((currentPage - 1)* perPage).limit(perPage)
     res.status(200).json({
       message: "Fetch order",
       user: order,
